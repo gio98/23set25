@@ -107,7 +107,7 @@ body {
 }
 
 .romantic-button {
-  background: linear-gradient(45deg, #ff4da6, #e60073) !important;
+  background: linear-gradient(45deg, gold, gold) !important;
   border: 2px solid #ffcce6 !important;
   border-radius: 15px !important;
   box-shadow: 0 0 15px #e60073 !important;
