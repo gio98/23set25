@@ -1,0 +1,268 @@
+@font-face {
+  font-family: 'Stellar';
+  src: url('fonts/Stellar-FreeForPersonalUse/Stellar-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Stellar';
+  src: url('fonts/Stellar-FreeForPersonalUse/Stellar-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  background: #060e1b;
+  overflow: hidden;
+  font-family: 'Stellar', sans-serif;
+}
+
+/* Classi per le animazioni di ingresso */
+.fade-in {
+  animation: fadeIn 2s ease-out;
+}
+
+.slide-in-top {
+  animation: slideInFromTop 1.5s ease-out;
+}
+
+.slide-in-bottom {
+  animation: slideInFromBottom 1.5s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 1.5s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 1.5s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 1.5s ease-out;
+}
+
+#luna{
+  position: relative;
+  top: -45pc;
+  left: 18pc;
+  width: 50pc;
+}
+
+/* Animazioni per i testi */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073; }
+  100% { text-shadow: 0 0 10px #fff, 0 0 15px #ff4da6, 0 0 20px #ff4da6, 0 0 25px #ff4da6; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Animazioni di ingresso */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.romantic-text {
+  animation: glow 1.5s ease-in-out infinite alternate, float 6s ease-in-out infinite, fadeIn 2s ease-out;
+  color: #ffcce6 !important;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2em;
+  color: #ff4da6;
+  animation: float 4s ease-in-out infinite, fadeIn 1.5s ease-out;
+  z-index: 100;
+}
+
+.romantic-button {
+  background: linear-gradient(45deg, #ff4da6, #e60073) !important;
+  border: 2px solid #ffcce6 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 0 15px #e60073 !important;
+  transition: all 0.3s ease !important;
+  color: white !important;
+  cursor: pointer !important;
+  animation: scaleIn 1.5s ease-out;
+}
+
+.romantic-button:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 25px #e60073 !important;
+}
+
+/* Stili per la finestra modale */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: linear-gradient(45deg, #1a0033, #330033);
+  margin: 5% auto;
+  padding: 40px;
+  width: 85%;
+  max-width: 900px;
+  max-height: 139vh;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #e60073;
+  border: 2px solid #ffcce6;
+  color: #ffcce6;
+  position: relative;
+  overflow-y: auto;
+}
+
+.close-button {
+  color: #ffcce6;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  color: #ff4da6;
+  transform: scale(1.2);
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  color: #ff80ab;
+  text-shadow: 0 0 10px #e60073;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.love-letter {
+  font-size: 1.4em;
+  text-align: justify;
+  padding: 30px;
+  padding-bottom: 60px; /* Padding extra alla fine per evitare che il testo venga tagliato */
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+  max-height: 99vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ff80ab rgba(255, 255, 255, 0.1);
+  scroll-behavior: smooth;
+  letter-spacing: 0.02em;
+}
+
+.love-letter p {
+  margin-bottom: 22px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 204, 230, 0.1);
+  transition: transform 0.2s ease;
+  font-size: 3pc;
+}
+
+.love-letter p:hover {
+  transform: translateX(5px);
+  border-bottom: 1px solid rgba(255, 204, 230, 0.3);
+}
+
+.signature {
+  text-align: right;
+  font-style: italic;
+  margin-top: 30px;
+  font-size: 1.3em;
+  color: #ff80ab;
+}
+
+/* Stile per le scrollbar personalizzate */
+.love-letter::-webkit-scrollbar {
+  width: 8px;
+}
+
+.love-letter::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.love-letter::-webkit-scrollbar-thumb {
+  background-color: #ff80ab;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ff80ab;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stile per evidenziare il paragrafo attualmente in visualizzazione */
+.love-letter p:first-child {
+  border-left: 3px solid #ff80ab;
+  padding-left: 15px;
+  margin-left: -15px;
+}
+
+/* Effetto di scorrimento fluido */
+.love-letter {
+  scroll-padding: 60px; /* Aumentato per garantire spazio sufficiente */
+  scroll-snap-type: y proximity;
+}
+
+.love-letter p {
+  scroll-snap-align: start;
+}
+
+/* Stile per l'ultimo paragrafo per garantire che sia completamente visibile */
+.love-letter p:last-child {
+  margin-bottom: 40px; /* Spazio extra dopo l'ultimo paragrafo */
+  padding-bottom: 20px;
+  border-bottom: none; /* Rimuove il bordo dall'ultimo paragrafo */
+  font-size: 4pc;
+}
