@@ -112,7 +112,7 @@ body {
   border-radius: 15px !important;
   box-shadow: 0 0 15px #e60073 !important;
   transition: all 0.3s ease !important;
-  color: white !important;
+  color: black !important;
   cursor: pointer !important;
   animation: scaleIn 1.5s ease-out;
 }
